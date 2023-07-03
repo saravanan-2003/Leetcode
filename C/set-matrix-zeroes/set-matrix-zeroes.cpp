@@ -5,7 +5,6 @@ public:
         for(int i=0;i<matrix.size();i++){
             flag=0;
             for(int j=0;j<matrix[i].size();j++){
-                
                 if(matrix[i][j]==0){
                     for(int k=0;k<matrix.size();k++){
                         if(matrix[k][j]!=0){
@@ -21,7 +20,6 @@ public:
                 }
             }
         }
-
         for(int i=0;i<matrix.size();i++){
             for(int j=0;j<matrix[i].size();j++){
                 if(matrix[i][j]==-99){
