@@ -14,10 +14,16 @@ public:
             freq_b[magazine[i]-'a']++;
         }
         for(int i=0;i<26;i++){
-            if(freq_b[i]==0 && freq_a[i]!=0)
+            if(freq_b[i]==0 && freq_a[i]!=0){
+                 cout<<"hii";
                 return 0;
+               
+            }
             else if(freq_a[i]>freq_b[i])
+            {
+                cout<<"hello";
                 return 0;
+            }
         }
         return 1;
     }
