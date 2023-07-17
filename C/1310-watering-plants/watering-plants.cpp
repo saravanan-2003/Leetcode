@@ -8,8 +8,7 @@ public:
                 steps++;
             }
             else{
-                steps=steps+i+i+1;
-                // capacity=cap;
+                steps+=i+i+1;
                 capacity=cap-plants[i];
             }
         }
