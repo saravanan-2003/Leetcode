@@ -4,9 +4,9 @@ public:
         int temp=n;
         int alternatedigit=0;
         vector<int>v;
-        while(temp){
-            v.push_back(temp%10);
-            temp/=10;
+        while(n){
+            v.push_back(n%10);
+            n/=10;
         }
         reverse(v.begin(),v.end());
         for(int i=0;i<v.size();i++){
