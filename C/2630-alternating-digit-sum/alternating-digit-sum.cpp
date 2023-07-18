@@ -1,7 +1,6 @@
 class Solution {
 public:
     int alternateDigitSum(int n) {
-        int temp=n;
         int alternatedigit=0;
         vector<int>v;
         while(n){
