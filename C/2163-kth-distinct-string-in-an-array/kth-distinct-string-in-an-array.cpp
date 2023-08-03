@@ -1,27 +1,19 @@
 class Solution {
 public:
     string kthDistinct(vector<string>& arr, int k) {
-        //set<string>s1(arr.begin(),arr.end());
-        //arr.clear();
-        // for(auto i:s1){
-        //     arr.push_back(i);
-        // }
         vector<string>v;
+        int flag;
         for(int i=0;i<arr.size();i++){
-            int flag=0;
+             flag=1;
             for(int j=0;j<arr.size();j++){
                 if(i!=j && arr[i]==arr[j]){
-                    flag=1;
+                    flag=0;
                     break;
                 }
             }
-            if(flag==0){
-                v.push_back(arr[i]);
-            }
+            if(flag)
+            v.push_back(arr[i]);
         }
-        if(v.size()<k){
-            return "";
-        }
-        return v[k-1];
+        return v.size()<k?"":v[k-1];
     }
 };
