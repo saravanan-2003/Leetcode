@@ -9,7 +9,8 @@ public:
                 // temp_right=s.substr(i+part.length(),s.length());
                 // temp=temp_left+temp_right;
                 // s=temp;
-                s=s.substr(0,i)+s.substr(i+part.length(),s.length());
+                // s=s.substr(0,i)+s.substr(i+part.length(),s.length());
+                s=s.erase(i,part.length());
                 i=-1;
             }
         }
