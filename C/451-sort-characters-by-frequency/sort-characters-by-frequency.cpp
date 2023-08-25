@@ -41,19 +41,9 @@ string repeat(string new_al,int count,char strc){
                 }
             }
         }
-
-        // for(int i=0;i<123;i++){
-        //     if(freq[i]!=0){
-        //         cout<<check[i]<<" ";
-        //     }
-        // }
         string req="";
         for(int i=0;i<123;i++){
-            // for(int j=0;j<freq[i];j++){
-                if(freq[i]!=0)
                 req=repeat(req,freq[i],check[i]);
-                // req=req+check[i];
-            // }
         }
         return req;
     }
