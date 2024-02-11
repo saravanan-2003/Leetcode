@@ -1,7 +1,17 @@
 class Solution {
 public:
+    void seperate(int change,vector<int>& v,vector<char>&c){
+        while(change){
+            v.push_back(change%10);
+            change=change/10;
+        }
+        reverse(v.begin(),v.end());
+        for(int i=0;i<v.size();i++){
+                char std=v[i]+'0';
+                c.push_back(std);
+            }
+    }
     int compress(vector<char>& chars) {
-        // sort(chars.begin(),chars.end())
         vector<char>c;
         int count=1,i;
         for(i=0;i<chars.size()-1;i++){
@@ -18,15 +28,7 @@ public:
                     else{
                         int change=count;
                         vector<int>v;
-                        while(change){
-                            v.push_back(change%10);
-                            change=change/10;
-                        }
-                        reverse(v.begin(),v.end());
-                        for(int i=0;i<v.size();i++){
-                            char std=v[i]+'0';
-                            c.push_back(std);
-                        }
+                        seperate(change,v,c);
                     }
                 }
                 count=1;
@@ -36,15 +38,7 @@ public:
         c.push_back(chars[i]);
         if(count!=1){
             vector<int>v;
-            while(change){
-                v.push_back(change%10);
-                change=change/10;
-            }
-            reverse(v.begin(),v.end());
-            for(int i=0;i<v.size();i++){
-                char std=v[i]+'0';
-                c.push_back(std);
-            }
+            seperate(change,v,c);
         }
                     
         chars.clear();
