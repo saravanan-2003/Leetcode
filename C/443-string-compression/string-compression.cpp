@@ -5,16 +5,12 @@ public:
         vector<char>c;
         int count=1,i;
         for(i=0;i<chars.size()-1;i++){
-            
             if(chars[i]==chars[i+1]){
                 count++;
             }
             else{
                 c.push_back(chars[i]);
-                if(count==1){
-
-                }
-                else{
+                if(count!=1){
                     if(count<=9){
                         char std=count+'0';
                         c.push_back(std);
@@ -38,10 +34,7 @@ public:
         }
         int change=count;
         c.push_back(chars[i]);
-        if(count==1){
-
-        }
-        else{
+        if(count!=1){
             vector<int>v;
             while(change){
                 v.push_back(change%10);
