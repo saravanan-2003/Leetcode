@@ -1,19 +1,11 @@
 class Solution {
 public:
     vector<int> countBits(int n) {
-        int i=0,temp,count,div;
-        vector<int>v;
+        int i=1,temp,count,div;
+        vector<int>v(n+1);
+        v[0]=0;
         while(i<=n){
-            temp=i;
-            count=0;
-            while(temp!=0){
-                div=temp%2;
-                temp=temp/2;
-                if(div==1){
-                    count++;
-                }
-            }
-            v.push_back(count);
+            v[i]=v[i/2]+i%2;
             i++;
         }
         return v;
