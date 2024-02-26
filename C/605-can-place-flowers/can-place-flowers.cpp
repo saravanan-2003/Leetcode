@@ -19,6 +19,7 @@ public:
             if(i==0){
                 if(flowerbed[1]==0 && flowerbed[0]==0){
                     flowerbed[0]=1;
+                    i++;
                     n--;
                 }
             }
@@ -35,8 +36,6 @@ public:
         if(flowerbed[k-2]==0 && flowerbed[k-1]==0){
             n--;
         }
-        
-        cout<<n;
         if(n<=0){
             return 1;
         }
