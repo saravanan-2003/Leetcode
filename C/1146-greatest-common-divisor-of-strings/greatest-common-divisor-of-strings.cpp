@@ -20,12 +20,12 @@ public:
                     h += str2.size();
                 }
                 if (h == temp.size()) {
-                    break;
+                    return str2;
                 } else {
                     str2 = str2.substr(0, str2.size() - 1);
                 }
             }
         }
-        return str2;
+        return "";
     }
 };
