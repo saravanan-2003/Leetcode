@@ -2,25 +2,20 @@ class Solution {
 public:
     vector<int> numberGame(vector<int>& nums) {
         vector<int> temp;
-        for (int i = 0; i < nums.size() / 2; i++) {
-            int min = INT_MAX, min1 = INT_MAX, locate1, locate2;
-            for (int i = 0; i < nums.size(); i++) {
-                if (nums[i] < min) {
-                    min = nums[i];
-                    locate1 = i;
+        for(int j=0;j<nums.size();j++){
+            for(int i=0;i<nums.size()-1;i++){
+                if(nums[i]>nums[i+1]){
+                    nums[i]=nums[i]^nums[i+1];
+                    nums[i+1]=nums[i]^nums[i+1];
+                    nums[i]=nums[i]^nums[i+1];
                 }
             }
-            for (int i = 0; i < nums.size(); i++) {
-                if (nums[i] < min1 && i != locate1) {
-                    min1 = nums[i];
-                    locate2 = i;
-                }
-            }
-            temp.push_back(min1);
-            temp.push_back(min);
-            nums[locate1] = 100;
-            nums[locate2] = 100;
         }
-        return temp;
+        for(int i=0;i<(nums.size())-1;i+=2){
+            nums[i]=nums[i]^nums[i+1];
+            nums[i+1]=nums[i]^nums[i+1];
+            nums[i]=nums[i]^nums[i+1];
+        }
+        return nums;
     }
 };
